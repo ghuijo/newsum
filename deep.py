@@ -468,7 +468,7 @@ for n in range(3):
         content = article.select("div.art_body > p.content_text")
         for paragraph in content:
             content_arr.append(paragraph.get_text().strip('\n').replace('. ', '.^'))
-        content = ''.join(content_arr).split('^')
+        content = '^'.join(content_arr).split('^')
         count = 0
         temp = []
         for sentence in content:
@@ -574,7 +574,7 @@ for n in range(3):
         content[0].find('b').decompose()
     for paragraph in content:
         content_arr.append(paragraph.get_text().replace('\n', ' ').replace('. ', '.^').replace('\r', '').lstrip())
-    content = ''.join(content_arr).split('^')
+    content = '^'.join(content_arr).split('^')
     
     count = 0
     temp = []
